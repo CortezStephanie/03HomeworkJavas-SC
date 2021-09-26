@@ -25,9 +25,19 @@ generateBtn.addEventListener("click", writePassword);
 // generate password function
 //in the function include
 function generatePassword(){
-  console.log("button works")
+  console.log("button works");
+  var passwordLength = window.prompt("password must be between 8-128 characters")
+  if (passwordLength < 8) {
+    window.alert("password must be between 8-128 characters");
+  }
+  else if (passwordLength > 128) {
+    window.alert("password must be between 8-128 characters");
+  }
+  else (!passwordLength) {
+    window.alert("password must be between 8-128 characters"); //if they click cancel
+  }
+  return;
 }
 
-// ability to choose which criteria will be generated in the password
-// (use an array)length should be more then 8 and less then 128 characters  
-//
+generatePassword();
+
