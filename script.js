@@ -2,9 +2,11 @@
 // red button
 var generateBtn = document.querySelector("#generate");
 var specialCharacters = ["!","@","#","$","%","^","&","*"];
-var upperCase = ["A","B","C","D","E","F","G","H"];
-var lowerCase = ["a","b","c","d","e","f","g","h"];
-var numbers = [1,2,3,4,5,6,7,8];
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var numbers = [1,2,3,4,5,6,7,8,9,10];
+let passCharacter = '';
+let userPass = '';
 
 console.log(specialCharacters)
 console.log(upperCase)
@@ -20,24 +22,49 @@ function writePassword() {
 
 }
 
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 // generate password function
 //in the function include
 function generatePassword(){
   console.log("button works");
-  var passwordLength = window.prompt("password must be between 8-128 characters")
-  if (passwordLength < 8) {
+  var passwordLength = window.prompt("You can choose between 8-128 characters")
+  if (passwordLength < 8 || passwordLength > 128) {
     window.alert("password must be between 8-128 characters");
+    return; 
+  } 
+  let passUpper= window.confirm('Would you like uppercase characters');
+  let passLow = window.confirm('Would you like lowercase characters');
+  let passNum = window.confirm('Would you like numeric characters');
+  let passSpec = window.confirm('Would you like special characters');
+
+  let charcPool = [];
+
+  if (passUpper) {
+    charcPool = charcPool.concat(upperCase)
+  } 
+  if (passLow) {
+    charcPool = charcPool.concat(lowerCase)
   }
-  else if (passwordLength > 128) {
-    window.alert("password must be between 8-128 characters");
+  if (passNum) {
+    charcPool = charcPool.concat(numbers)
   }
-  else (!passwordLength) {
-    window.alert("password must be between 8-128 characters"); //if they click cancel
+  if (passSpec) {
+    charcPool = charcPool.concat(specialCharacters)
   }
-  return;
+  
+  for (let i = 0; i < passwordLength; i++) {
+    let ranIndex = Math.floor(Math.random()* charcPool.length)
+    passCharacter = charcPool[ranIndex]
+    userPass = userPass.concat(passCharacter)
+  }
+
+  return userPass;
 }
 
-generatePassword();
+
+
+
 
