@@ -13,7 +13,7 @@ Answer a series of questions about what you would like to include in your passwo
 
 ### Depolyed
 visit the deployed webpage here at this link
-![password generator](https://cortezstephanie.github.io/03HomeworkJavas-SC/)
+[password generator](https://cortezstephanie.github.io/03HomeworkJavas-SC/)
 
 ## License
 This repository is covered by the MIT License  <br> 
