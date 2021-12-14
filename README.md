@@ -10,6 +10,7 @@
 There is no installation for this application. Just open in your default browser.
 ### Usage
 Answer a series of questions about what you would like to include in your password. Once done click the generate button and there will be a random generated password displayed in the input box. 
+![password](/assets/images/withpassword.png "passwordgenerator")
 ## License
 This repository is covered by the MIT License  <br> 
 https://opensource.org/licenses/MIT
